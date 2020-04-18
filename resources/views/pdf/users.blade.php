@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Laporan Pengguna</title>
+	<title>Report User</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -10,7 +10,7 @@
 		<center>
 			<a target="_blank" href="https://www.zuramai.net/">
             </a>
-			<h4>Daftar Pengguna</h4>
+			<h4>List User</h4>
 		</center>
 		<br/>
 		<table class='table table-bordered'>
@@ -18,9 +18,9 @@
 				<tr>
 					<th>No</th>
 					<th>Role</th>
-					<th>Nama</th>
+					<th>Name</th>
 					<th>Email</th>
-					<th>No Telp</th>
+					<th>Phone number</th></th>
 					<th>Alamat</th>
 				</tr>
 			</thead>

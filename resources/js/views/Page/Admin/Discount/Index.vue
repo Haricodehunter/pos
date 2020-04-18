@@ -7,7 +7,7 @@
             <div class="page-title-box">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h4 class="page-title m-0">Diskon</h4>
+                        <h4 class="page-title m-0">Discount</h4>
                     </div>
                     <!-- end col -->
                 </div>
@@ -24,14 +24,14 @@
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-8">
-                            <h4 class="mt-0 header-title">Daftar Semua Diskon</h4>
+                            <h4 class="mt-0 header-title">List of All Discounts</h4>
                         </div>
                         <div class="col-4">
 
                                 <div class="float-right d-none d-md-block">
                                     <div class="dropdown">
                                         <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalAdd">
-                                            <i class="ti-plus mr-1"></i> Tambah
+                                            <i class="ti-plus mr-1"></i> Add
                                         </button>
                                     </div>
                                 </div>
@@ -43,10 +43,10 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Produk</th>
-                                    <th>Jumlah Diskon</th>
+                                    <th>Product</th>
+                                    <th>Discount</th>
                                     <th>Status</th>
-                                    <th>Aksi</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody> 
@@ -54,7 +54,7 @@
                                     <td>{{ discount.id }}</td>
                                     <td>{{ discount.product.name }}</td>
                                     <td>{{ discount.amount }}%</td>
-                                    <td><div :class="{ 'badge':true, 'badge-danger': discount.status == false, 'badge-success': discount.status == true }">{{ discount.status ? 'Aktif' : 'Tidak Aktif' }}</div></td>
+                                    <td><div :class="{ 'badge':true, 'badge-danger': discount.status == false, 'badge-success': discount.status == true }">{{ discount.status ? 'Active' : 'No Active' }}</div></td>
                                     <td>
                                         <button class='btn btn-danger' @click="deleteDiscount(discount.id)">Delete</button>
                                     </td>
@@ -73,7 +73,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Tambah Diskon Baru</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Add Discount</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Tutup">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -87,8 +87,8 @@
                                     </ul>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Nama/Kode Produk</label>
-                                    <input type="text" class="form-control" placeholder="Cari Kode Atau Nama Produk" id="kode-produk" v-model="search" @keyup="searchProduct()">
+                                    <label for="">Product Code</label>
+                                    <input type="text" class="form-control" placeholder="Product Code" id="kode-Product" v-model="search" @keyup="searchProduct()">
                                     <div class="dropdown-search">
                                         <ul>
                                             <li v-for="data in productSearch" :key="data.id" @click="addProduct(data)"><img :src="`/images/products/${data.image_name}`" alt="" class='dropdown-image'><span><b>{{ data.code.toUpperCase() }}</b> - {{ data.name }}</span></li>
@@ -96,13 +96,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Jumlah Diskon (Dalam %): </label>
+                                    <label for="">Discount Amount (In%): </label>
                                     <input type="number" name="amount" id="" class="form-control" v-model="add.amount">
                                 </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" :disabled="addLoading == true"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="addLoading == true"></span> Tambah</button>
+                            <button type="submit" class="btn btn-primary" :disabled="addLoading == true"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="addLoading == true"></span> Add</button>
                         </div>
                     </form>
                 </div>
@@ -176,8 +176,8 @@ export default {
                 .then(res => {
                     console.log(res.data);
                     Swal.fire(
-                        'Sukses',
-                        'Sukses Tambah Diskon!',
+                        'Success',
+                        'Sucess Add Discount!',
                         'success'
                     );
                 }).catch(err => {
@@ -189,8 +189,8 @@ export default {
            axios.delete(`/api/v1/discount/${id}`)
             .then(res => {
                 Swal.fire(
-                        'Sukses',
-                        'Sukses Hapus Diskon!',
+                        'Sucess',
+                        'Sucess Add Discount!',
                         'success'
                     );
                 this.viewData();

@@ -11,18 +11,18 @@
         size: 'Ukuran font'
       },
       image: {
-        image: 'Gambar',
-        insert: 'Sisipkan gambar',
+        image: 'Picture',
+        insert: 'Sisipkan Picture',
         resizeFull: 'Ukuran penuh',
         resizeHalf: 'Ukuran 50%',
         resizeQuarter: 'Ukuran 25%',
         floatLeft: 'Rata kiri',
         floatRight: 'Rata kanan',
-        floatNone: 'Tidak ada perataan',
-        dragImageHere: 'Tarik gambar pada area ini',
-        selectFromFiles: 'Pilih gambar dari berkas',
-        url: 'URL gambar',
-        remove: 'Hapus Gambar'
+        floatNone: 'No ada perataan',
+        dragImageHere: 'Tarik Picture pada area ini',
+        selectFromFiles: 'Pilih Picture dari berkas',
+        url: 'URL Picture',
+        remove: 'Delete Picture'
       },
       video: {
         video: 'Video',
@@ -33,8 +33,8 @@
       },
       link: {
         link: 'Tautan',
-        insert: 'Tambah tautan',
-        unlink: 'Hapus tautan',
+        insert: 'Add tautan',
+        unlink: 'Delete tautan',
         edit: 'Edit',
         textToDisplay: 'Tampilan teks',
         url: 'Tautan tujuan',

@@ -52,7 +52,7 @@ class DiscountController extends Controller
         $discount->status = true;
         $discount->save();
 
-        return response()->json(['status' => true, 'message' =>'Sukses Menambah Diskon!']);
+        return response()->json(['status' => true, 'message' =>'Sukses Menambah Discount!']);
 
     }
 
@@ -101,6 +101,6 @@ class DiscountController extends Controller
         $discount = Discount::find($id);
         $discount->delete();
 
-        return response()->json(['status' => true, 'message' => 'Sukses Hapus Data Diskon']);
+        return response()->json(['status' => true, 'message' => 'Sukses Delete Data Discount']);
     }
 }

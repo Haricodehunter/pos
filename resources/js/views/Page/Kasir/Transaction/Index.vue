@@ -6,7 +6,7 @@
             <div class="page-title-box">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h4 class="page-title m-0">Transaksi</h4>
+                        <h4 class="page-title m-0">Transictions</h4>
                     </div>
                     <!-- end col -->
                 </div>
@@ -23,19 +23,19 @@
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-8">
-                            <h4 class="mt-0 header-title">Transaksi Baru</h4>
+                            <h4 class="mt-0 header-title">New Transactions</h4>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Kode Produk</label>
-                        <input type="text" class="form-control" placeholder="Cari Kode Atau Nama Produk" id="kode-produk" v-model="search" @keyup="searchProduct()">
+                        <label for="">Product Code</label>
+                        <input type="text" class="form-control" placeholder="Product Code" id="kode-Product" v-model="search" @keyup="searchProduct()">
                         <div class="dropdown-search">
                             <ul>
                                 <li v-for="data in productSearch" :key="data.id" @click="addProductToCart(data)"><img :src="`/images/products/${data.image_name}`" alt="" class='dropdown-image'><span><b>{{ data.code.toUpperCase() }}</b> - {{ data.name }}</span></li>
                             </ul>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary float-right" id="btn-tambah-produk">Tambah</button>
+                    <button type="button" class="btn btn-primary float-right" id="btn-Add-Product">Add</button>
     
                     <div class="form-group">
 
@@ -49,11 +49,11 @@
                     <div class="alert alert-success" v-if="successMsg !== ''" v-html="successMsg"></div>
                     <div class="row mb-3">
                         <div class="col-8">
-                            <h4 class="mt-0 header-title">Daftar Pembelian</h4>
+                            <h4 class="mt-0 header-title">LIST OF PURCHASES</h4>
                         </div>
                     </div>
                     <div class="float-right mb-2">
-                        <h5>Total Harga: <span id="rp">Rp <span id="total-price" data-value='0'>{{ formatPrice(totalPrice) }}</span></span></h5>
+                        <h5>Total Price: <span id="rp">AED<span id="total-price" data-value='0'>{{ formatPrice(totalPrice) }}</span></span></h5>
                     </div>
                     <form action="" method="post" id="form-transaction">
                         <div class="table-responsive">
@@ -61,12 +61,12 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Produk</th>
-                                        <th>Jumlah</th>
-                                        <th>Sisa Stok</th>
-                                        <th>Harga</th>
-                                        <th>PPN</th>
-                                        <th>Total Harga</th>
+                                        <th>Name</th>
+                                        <th>amount</th>
+                                        <th>Remaining Stock</th>
+                                        <th>Price</th>
+                                        <th>VAT</th>
+                                        <th>Total Price</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -81,13 +81,13 @@
                                             {{ product.stock }}
                                         </td>
                                         <td>
-                                            Rp {{ formatPrice(product.realPrice) }} <span class='text-success' v-if="product.discount !== null">DISKON!</span>
+                                            AED{{ formatPrice(product.realPrice) }} <span class='text-success' v-if="product.discount !== null">Discount!</span>
                                         </td>
                                         <td>
-                                            Rp {{ formatPrice(product.ppn/100 * product.realPrice) }} 
+                                            AED{{ formatPrice(product.ppn/100 * product.realPrice) }} 
                                         </td>
                                         <td>
-                                            Rp {{ formatPrice(product.price + (product.ppn/100 * product.price)) }}
+                                            AED{{ formatPrice(product.price + (product.ppn/100 * product.price)) }}
                                         </td>
                                         <td>
                                             <button type="button" @click="deleteCart(index)" class='btn btn-danger btn-sm'><i class="fas fa-trash"></i></button>
@@ -101,19 +101,19 @@
                             <div class='row' v-if="this.cart.length >= 1">
                                 <div class='col-md-6 offset-md-6'>
                                     <div class='form-group  mt-3'>
-                                        <label>Nominal Bayar</label>
+                                        <label>Nominal Pay</label>
                                         <input type='number' :class='{"form-control":true, "is-invalid": this.error}' id='nomi  nal-bayar' name='nominal_bayar' @keyup='hitungKembalian()' v-model="bayar">
                                         <div class="invalid-feedback" v-if="this.error">
                                             {{error}}
                                         </div>
                                     </div>
                                     <div class='form-group  mt-3'>
-                                        <label>Kembalian</label>
+                                        <label>Change</label>
                                         <input type='number' class='form-control' id='kembalian' name='kembalian' readonly v-model="kembalian">
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary float-right" type="button"  v-if="this.cart.length >= 1" @click="showKeteranganModal()">Proses</button>
+                            <button class="btn btn-primary float-right" type="button"  v-if="this.cart.length >= 1" @click="showKeteranganModal()">Process</button>
                         </div>
                     </form>
                 </div>
@@ -137,7 +137,7 @@
 							<div class="form-group">
 								<label for="">Customer: </label>
 								<select name="" id="" class="form-control" v-model="customer">
-									<option value="">Pilih customer..</option>
+									<option value="">Select the customer..</option>
 									<option  v-for="customer in this.customers" :key="customer.id" :value="customer.id">{{ customer.name }}</option>
 								</select>
 							</div>
@@ -150,7 +150,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Selesai</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</form>
             </div>
@@ -212,7 +212,7 @@ export default {
             let obj = this.cart.find(o => o.id === array.id);
 
             if(obj !== undefined) {
-                alertify.error('Barang sudah ditambahkan');
+                alertify.error('Item Added');
             }else{
                 this.cart.push(array);
             }
@@ -309,7 +309,7 @@ export default {
 
         showKeteranganModal() {
 			if(this.bayar < this.totalPrice) {
-				this.error = `Minimal bayar adalah Rp ${this.totalPrice}`;
+				this.error = `Minimal bayar adalah AED${this.totalPrice}`;
 				return;
             }
             axios.get('/api/v1/payment-method')
@@ -362,7 +362,7 @@ export default {
         object-fit: cover
     }
 
-    #rp {
+    #AED{
         color: #d35400
     }
 </style>

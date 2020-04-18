@@ -47,7 +47,7 @@ class UsersController extends Controller
             'password' => ['required', 'string', 'min:8'],
             'photo' => ['required', 'image'],
             'username' => ['required','min:6', 'unique:users'],
-            'level' => ['required','in:Admin,Kasir'],
+            'level' => ['required','in:Admin,Cashier'],
             'address' => 'required',
             'phone' => 'required|numeric',
         ]);
@@ -112,7 +112,7 @@ class UsersController extends Controller
             'password' => ['required', 'string', 'min:8'],
             'photo' => ['required', 'image'],
             'username' => ['required','min:6', 'unique:users'],
-            'level' => ['required','in:Admin,Kasir'],
+            'level' => ['required','in:Admin,Cashier'],
             'address' => 'required',
             'phone' => 'required|numeric',
         ]);

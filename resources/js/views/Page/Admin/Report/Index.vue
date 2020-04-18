@@ -6,7 +6,7 @@
                 <div class="page-title-box">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h4 class="page-title m-0">Semua Laporan</h4>
+                            <h4 class="page-title m-0">All Reports</h4>
                         </div>
                         <!-- end col -->
                     </div>
@@ -23,18 +23,18 @@
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-8">
-                                <h4 class="mt-0 header-title">Laporan</h4>
+                                <h4 class="mt-0 header-title">Report</h4>
                             </div>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <td class="td-30">Total Produk: </td>
+                                        <td class="td-30">Total Product: </td>
                                         <td class="td-70">{{ total.product }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="td-30">Total Kategori Produk: </td>
+                                        <td class="td-30">Total Category Product: </td>
                                         <td class="td-70">{{ total.category }}</td>
                                     </tr>
                                     <tr>
@@ -42,15 +42,15 @@
                                         <td class="td-70">{{ total.transaction_thismo }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="td-30">Total Keseluruhan Transaksi: </td>
+                                        <td class="td-30">Total Transactions: </td>
                                         <td class="td-70">{{ total.transaction }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="td-30">Total Produk Terjual: </td>
+                                        <td class="td-30">Total Product Sold: </td>
                                         <td class="td-70">{{ total.product_sold }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="td-30">Total Produk Terjual (Bulan ini): </td>
+                                        <td class="td-30">Total Product Sold (This month): </td>
                                         <td class="td-70">{{ total.product_sold_thismo }}</td>
                                     </tr>
                                     <tr>
@@ -73,7 +73,7 @@
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-8">
-                                <h4 class="mt-0 header-title">Laporan Transaksi</h4>
+                                <h4 class="mt-0 header-title">Transaction Report</h4>
                             </div>
                         </div>
                         <div id="transaction-chart" class="morris-chart" style="height: 300px"></div>
@@ -82,14 +82,14 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Jenis Laporan</th>
+                                        <th>Report Type</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Laporan Transaksi</td>
+                                        <td>Transaction Report</td>
                                         <td>
                                             <button type="button" class='btn btn-primary' @click="downloadPDF('transactions')">PDF</button>
                                             <button type="button" class='btn btn-success'>Excel</button>
@@ -97,7 +97,7 @@
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>Daftar Produk</td>
+                                        <td>List Product</td>
                                         <td>
                                             <button type="button" class='btn btn-primary' @click="downloadPDF('products')">PDF</button>
                                             <button type="button" class='btn btn-success'>Excel</button>
@@ -105,7 +105,7 @@
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>Daftar Pengguna</td>
+                                        <td>List User</td>
                                         <td>
                                             <button type="button" class='btn btn-primary' @click="downloadPDF('users')">PDF</button>
                                             <button type="button" class='btn btn-success'>Excel</button>
@@ -137,7 +137,7 @@ export default {
         this.getTotalReport();
 
         setTimeout(() => {
-            this.showTransactionChart('transaction-chart',this.total.transactionChart, 'y', ['a'], ['Jumlah Penjualan: '], ['#5985ee']);
+            this.showTransactionChart('transaction-chart',this.total.transactionChart, 'y', ['a'], ['Sales Amount: '], ['#5985ee']);
         }, 2000);
         
     },

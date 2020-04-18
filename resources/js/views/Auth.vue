@@ -16,10 +16,10 @@
                             <form class="form-horizontal m-t-20" @submit.prevent="login()">
                                 <transition name="fade">
                                     <div class="alert alert-danger" v-if="auth.has_error">
-                                        Username atau password salah.
+                                       Incorrect username or password
                                     </div>
                                     <div class="alert alert-success" v-else-if="auth.success">
-                                        Sukses login.
+                                         login success.
                                     </div>
                                 </transition>
                                 <div class="form-group row">
@@ -96,7 +96,7 @@ export default {
                     app.auth.success = true;
                     app.button_loading = true;
                     setTimeout(() => {
-                        const redirectTo =  this.$auth.user().level === 'Admin' ? '/admin' : '/transaksi';
+                        const redirectTo =  this.$auth.user().level === 'Admin' ? '/admin' : '/transaction';
                         // this.$router.push(redirectTo)
                         window.location= '/admin';
                     }, 1000);

@@ -68,13 +68,13 @@
                                                     <div class="row">
                                                         <div class="col-6 m-t-30">
                                                             <address>
-                                                                <strong>Metode Pembayaran:</strong><br>
+                                                                <strong>Payment Method:</strong><br>
                                                                 {{ data_order.payment_method.name }} <br>
                                                             </address>
                                                         </div>
                                                         <div class="col-6 m-t-30 text-right">
                                                             <address>
-                                                                <strong>Tanggal Pesanan:</strong><br>
+                                                                <strong>Order Date:</strong><br>
                                                                 {{ moment(data_order.created_at).format('DD MMMM YYYY') }}<br><br>
                                                             </address>
                                                         </div>
@@ -86,16 +86,16 @@
                                                 <div class="col-12">
                                                     <div class="panel panel-default">
                                                         <div class="p-2">
-                                                            <h3 class="panel-title font-20"><strong>Ringkasan Pesanan</strong></h3>
+                                                            <h3 class="panel-title font-20"><strong>Order Summary</strong></h3>
                                                         </div>
                                                         <div class="">
                                                             <div class="table-responsive">
                                                                 <table class="table">
                                                                     <thead>
                                                                     <tr>
-                                                                        <td><strong>Barang</strong></td>
-                                                                        <td class="text-center"><strong>Harga</strong></td>
-                                                                        <td class="text-center"><strong>Jumlah</strong>
+                                                                        <td><strong>Products</strong></td>
+                                                                        <td class="text-center"><strong>Price</strong></td>
+                                                                        <td class="text-center"><strong>Amount</strong>
                                                                         </td>
                                                                         <td class="text-right"><strong>Total</strong></td>
                                                                     </tr>
@@ -104,23 +104,23 @@
                                                                     
                                                                     <tr v-for="order_detail in data_order.details" v-bind:key="order_detail.id">
                                                                         <td>{{order_detail.product.name}}</td>
-                                                                        <td class="text-center">Rp {{ numberFormat(order_detail.price - order_detail.ppn) }}</td>
+                                                                        <td class="text-center">Aed {{ numberFormat(order_detail.price - order_detail.ppn) }}</td>
                                                                         <td class="text-center">{{ order_detail.quantity }}</td>
-                                                                        <td class="text-right">Rp {{ numberFormat(order_detail.subtotal - order_detail.ppn*order_detail.quantity)}}</td>
+                                                                        <td class="text-right">Aed {{ numberFormat(order_detail.subtotal - order_detail.ppn*order_detail.quantity)}}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="no-line"></td>
                                                                         <td class="no-line"></td>
                                                                         <td class="no-line text-center">
-                                                                            <strong>PPN</strong></td>
-                                                                        <td class="no-line text-right">Rp {{  numberFormat(totalPPN) }} </span></td>
+                                                                            <strong>VAT</strong></td>
+                                                                        <td class="no-line text-right">AED{{  numberFormat(totalPPN) }} </span></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="thick-line"></td>
                                                                         <td class="thick-line"></td>
                                                                         <td class="thick-line text-center">
                                                                             <strong>Subtotal</strong></td>
-                                                                        <td class="thick-line text-right">Rp {{numberFormat(data_order.total)}}</td>
+                                                                        <td class="thick-line text-right">AED{{numberFormat(data_order.total)}}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td class="no-line"></td>

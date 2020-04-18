@@ -134,7 +134,7 @@ class CategoryController extends Controller
 
         return [
             'status' => 'true',
-            'msg' => 'Kategori '.$cat->name.' Berhasil dihapus'
+            'msg' => 'Category '.$cat->name.' Berhasil diDelete'
         ];
     }
 }

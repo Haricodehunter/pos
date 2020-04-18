@@ -18,15 +18,15 @@
                     <div id="sidebar-menu">
                         <ul>
 
-                                <li class="menu-title" v-if="$auth.check(['Kasir','Admin'])">Kasir</li>
+                                <li class="menu-title" v-if="$auth.check(['Cashier','Admin'])">Cashier</li>
 
                                 
-                                <li v-if="$auth.check(['Kasir','Admin'])">
-                                    <router-link to="/transaksi" class="waves-effect"><i class="dripicons-rocket"></i> <span> Transaksi </span> </router-link>
+                                <li v-if="$auth.check(['Cashier','Admin'])">
+                                    <router-link to="/transaction" class="waves-effect"><i class="dripicons-rocket"></i> <span> Transaction </span> </router-link>
                                 </li>
                                 
-                                <li v-if="$auth.check(['Kasir','Admin'])">
-                                    <router-link to="/transaksi/riwayat" class="waves-effect"><i class="dripicons-to-do"></i> <span> Riwayat Transaksi </span> </router-link>
+                                <li v-if="$auth.check(['Cashier','Admin'])">
+                                    <router-link to="/transaction/history" class="waves-effect"><i class="dripicons-to-do"></i> <span> Transaction History </span> </router-link>
                                 </li>
                         
                             <li class="menu-title" v-if="$auth.check('Admin')">Admin</li>
@@ -39,15 +39,15 @@
                             </li>
                             
                             <li v-if="$auth.check('Admin')">
-                                <router-link to="/admin/transaksi" class="waves-effect"><i class="dripicons-archive"></i> <span> Semua Transaksi </span> </router-link>
+                                <router-link to="/admin/transaction" class="waves-effect"><i class="dripicons-archive"></i> <span> All Transactions </span> </router-link>
                             </li>
                             
                             <li v-if="$auth.check('Admin')">
-                                <router-link to="/admin/category" class="waves-effect"><i class="dripicons-archive"></i> <span> Kategori </span> </router-link>
+                                <router-link to="/admin/category" class="waves-effect"><i class="dripicons-archive"></i> <span> Category </span> </router-link>
                             </li>
                             
                             <li v-if="$auth.check('Admin')">
-                                <router-link to="/admin/users" class="waves-effect"><i class="dripicons-user"></i> <span> Pengguna </span> </router-link>
+                                <router-link to="/admin/users" class="waves-effect"><i class="dripicons-user"></i> <span> User </span> </router-link>
                             </li>
                             
                             <li v-if="$auth.check('Admin')">
@@ -55,15 +55,15 @@
                             </li>
 
                             <li v-if="$auth.check('Admin')">
-                                <router-link to="/admin/product" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Produk </span> </router-link>
+                                <router-link to="/admin/product" class="waves-effect"><i class="dripicons-briefcase"></i> <span> Product </span> </router-link>
                             </li>
 
                             <li v-if="$auth.check('Admin')">
-                                <router-link to="/admin/discount" class="waves-effect"><i class="dripicons-document-new"></i> <span> Diskon </span> </router-link>
+                                <router-link to="/admin/discount" class="waves-effect"><i class="dripicons-document-new"></i> <span> Discount </span> </router-link>
                             </li>
 
                             <li v-if="$auth.check('Admin')">
-                                <router-link to="/admin/report" class="waves-effect"><i class="dripicons-document-new"></i><span> Laporan </span> </router-link>
+                                <router-link to="/admin/report" class="waves-effect"><i class="dripicons-document-new"></i><span> Report </span> </router-link>
                             </li>
 
 
@@ -93,7 +93,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer" v-if="$route.meta.pageType != 'auth'">
-                    © 2019 <a href="https://zuramai.net">Zuramai Network</a> <span class="d-none d-md-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Ahmad Saugi.</span>
+                    © 2020 <a href="https://Digibees.io">Digibees Technologies Pvt Ltd</a> <span class="d-none d-md-inline-block"> - Made with <i class="mdi mdi-heart text-danger"></i> </span>
                 </footer>
 
             </div>

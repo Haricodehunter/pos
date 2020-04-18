@@ -25,11 +25,11 @@ import VueAuth from '@websanova/vue-auth'
 import VueAxios from 'vue-axios'
 
 import Home from './views/Page/Home.vue';
-import KasirTransactionIndex from './views/Page/Kasir/Transaction/Index.vue';
-import KasirTransactionEdit from './views/Page/Kasir/Transaction/Edit.vue';
-import KasirTransactionHistory from './views/Page/Kasir/Transaction/History.vue';
-import KasirTransactionDetail from './views/Page/Kasir/Transaction/Detail.vue';
-import TransactionInvoice from './views/Page/Kasir/Transaction/Invoice.vue';
+import CashierTransactionIndex from './views/Page/Cashier/Transaction/Index.vue';
+import CashierTransactionEdit from './views/Page/Cashier/Transaction/Edit.vue';
+import CashierTransactionHistory from './views/Page/Cashier/Transaction/History.vue';
+import CashierTransactionDetail from './views/Page/Cashier/Transaction/Detail.vue';
+import TransactionInvoice from './views/Page/Cashier/Transaction/Invoice.vue';
 
 import AdminHome from './views/Page/Admin/Home.vue';
 
@@ -76,14 +76,14 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         { path: '/', component: Home, meta: { auth: true }},
-        { path: '/transaksi', component: KasirTransactionIndex, meta: { auth:true }},
-        { path: '/transaksi/riwayat', component: KasirTransactionHistory, meta: { auth:true }},
-        { path: '/transaksi/invoice/:invoice_id', component: TransactionInvoice, meta: { auth:true }},
+        { path: '/transaction', component: CashierTransactionIndex, meta: { auth:true }},
+        { path: '/transaction/history', component: CashierTransactionHistory, meta: { auth:true }},
+        { path: '/transaction/invoice/:invoice_id', component: TransactionInvoice, meta: { auth:true }},
         
         { path: '/admin', component: AdminHome, meta: { auth: true }, name: 'admin.dashboard'},
-        { path: '/admin/transaksi', component: AdminTransactionIndex, meta: {auth:true }},
-        { path: '/admin/transaksi/edit/:id', component: AdminTransactionEdit, meta: {auth:true }},
-        { path: '/admin/transaksi/:id', component: AdminTransactionDetail, meta: { auth:true }},
+        { path: '/admin/transaction', component: AdminTransactionIndex, meta: {auth:true }},
+        { path: '/admin/transaction/edit/:id', component: AdminTransactionEdit, meta: {auth:true }},
+        { path: '/admin/transaction/:id', component: AdminTransactionDetail, meta: { auth:true }},
         
         { path: '/admin/users', component: AdminUsersIndex, meta: { auth:true }},
         { path: '/admin/users/edit/:id', component: AdminUsersEdit, meta: { auth:true }},

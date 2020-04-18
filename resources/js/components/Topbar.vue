@@ -4,7 +4,7 @@
         
         <div class="topbar-left	d-none d-lg-block">
             <div class="text-center">
-                <a href="/admin" class="logo"><img src="/images/logo2.png" height="22" alt="logo"></a>
+                <a href="/admin" class="logo"><img src="/images/logo2.png" height="42" alt="logo"></a>
             </div>
         </div>
 
@@ -67,8 +67,8 @@ export default {
         logout() {
             this.$auth.logout();
             Swal.fire(
-                        `Sukses!`,
-                        `Sukses logout!`,
+                        `Success!`,
+                        `Success logout!`,
                         'success'
                         )
         }

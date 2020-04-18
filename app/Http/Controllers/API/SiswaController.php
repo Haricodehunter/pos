@@ -14,7 +14,7 @@ class SiswaController extends Controller
 
     public function create(Request $request) {
         $siswa = new Siswa;
-        $siswa->nama = $request->nama;
+        $siswa->Name = $request->Name;
         $siswa->email = $request->email;
         $siswa->alamat = $request->alamat;
         $siswa->nohp = $request->nohp;
@@ -23,13 +23,13 @@ class SiswaController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $nama = $request->nama;
+        $Name = $request->Name;
         $alamat = $request->alamat;
         $nohp = $request->nohp;
         $email = $request->email;
 
         $siswa = Siswa::find($id);
-        $siswa->nama = $nama;
+        $siswa->Name = $Name;
         $siswa->alamat = $alamat;
         $siswa->nohp = nohp;
         $siswa->save();
@@ -41,7 +41,7 @@ class SiswaController extends Controller
         $siswa = Siswa::find($id);
         $siswa->delete();
 
-        return response()->json(['status'=>true,'message'=>'Data berhasil dihapus!']);
+        return response()->json(['status'=>true,'message'=>'Data berhasil diDelete!']);
     }
 
 

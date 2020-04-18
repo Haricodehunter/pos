@@ -34,8 +34,8 @@ npm run serve
 1.  Username: **admin**
     Password: **admin**
 
-2.  Username: **kasir**
-    Password: **kasir**
+2.  Username: **Cashier**
+    Password: **Cashier**
     
     
 ## License
